@@ -1,5 +1,4 @@
-
-import { CHANGE_PRIMARY_COLOR } from './actionTypes';
+export const CHANGE_PRIMARY_COLOR = 'CHANGE_PRIMARY_COLOR';
 
 export const changePrimaryColor = color => ({
   type: CHANGE_PRIMARY_COLOR,

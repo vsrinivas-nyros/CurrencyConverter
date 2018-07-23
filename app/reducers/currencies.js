@@ -1,10 +1,13 @@
-import { CHANGE_CURRENCY_AMOUNT,
-   SWAP_CURRENCY ,
-   CHANGE_BASE_CURRENCY , 
-   CHANGE_QUOTE_CURRENCY } from '../actions/currencies';
+import { CHANGE_CURRENCY_AMOUNT, SWAP_CURRENCY ,CHANGE_BASE_CURRENCY , CHANGE_QUOTE_CURRENCY } from '../actions/currencies';
 
-const setConversions = (state, action) => 
-{
+// const initialState = {
+//   baseCurrency: 'USD',
+//   quoteCurrency: 'GBP',
+//   amount: 100,
+//   conversions: {},
+// };
+
+const setConversions = (state, action) => {
   let conversion = {
     isFetching: true,
     date: '',
@@ -14,12 +17,11 @@ const setConversions = (state, action) =>
   if (state.conversions[action.currency]) {
     conversion = state.conversions[action.currency];
   }
+
   return { ...state.conversions, [action.currency]: conversion };
 };
 
-
-const initialState = 
-{
+const initialState = {
   baseCurrency: 'USD',
   quoteCurrency: 'GBP',
   amount: 100,
@@ -65,16 +67,13 @@ const initialState =
   },
 };
 
-
-export default (state = initialState, action) =>
- {
-  switch (action.type) 
-  
-  {
+export default (state = initialState, action) => {
+  switch (action.type) {
 
     case CHANGE_CURRENCY_AMOUNT:
       return { ...state, amount: action.amount || 0 };
   
+
       case SWAP_CURRENCY:
       return {
         ...state,
