@@ -23,9 +23,9 @@ export default EstyleSheet.create({
 
 	smallText:
 	{
-
 		fontSize: 14,
 		color: '$white',
+		textAlign: 'center',
 	}
 
 

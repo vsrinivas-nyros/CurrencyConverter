@@ -1,29 +1,32 @@
-import { CHANGE_CURRENCY_AMOUNT, SWAP_CURRENCY ,CHANGE_BASE_CURRENCY , CHANGE_QUOTE_CURRENCY } from '../actions/currencies';
+import { CHANGE_CURRENCY_AMOUNT,
+   SWAP_CURRENCY ,
+   CHANGE_BASE_CURRENCY , 
+   CHANGE_QUOTE_CURRENCY, 
+   GET_INITIAL_CONVERSION, 
+   CONVERSION_ERROR,
+   CONVERSION_RESULT } from '../actions/currencies';
 
-// const initialState = {
-//   baseCurrency: 'USD',
-//   quoteCurrency: 'GBP',
-//   amount: 100,
-//   conversions: {},
-// };
 
-const setConversions = (state, action) => {
+const setConversions = (state, action) => 
+{
   let conversion = {
     isFetching: true,
     date: '',
     rate: {},
   };
 
-  if (state.conversions[action.currency]) {
+  if (state.conversions[action.currency]) 
+  {
     conversion = state.conversions[action.currency];
   }
-
   return { ...state.conversions, [action.currency]: conversion };
 };
 
-const initialState = {
+
+const initialState = 
+{
   baseCurrency: 'USD',
-  quoteCurrency: 'GBP',
+  quoteCurrency: 'INR',
   amount: 100,
   conversions: {
     USD: {
@@ -67,13 +70,14 @@ const initialState = {
   },
 };
 
-export default (state = initialState, action) => {
-  switch (action.type) {
 
+export default (state = initialState, action) =>
+ {
+  switch (action.type) 
+  {
     case CHANGE_CURRENCY_AMOUNT:
       return { ...state, amount: action.amount || 0 };
   
-
       case SWAP_CURRENCY:
       return {
         ...state,
@@ -94,6 +98,33 @@ export default (state = initialState, action) => {
         quoteCurrency: action.currency,
         conversions: setConversions(state, action),
       };
+
+
+      case GET_INITIAL_CONVERSION:
+      return {
+        ...state,
+        conversions: setConversions(state, { currency: state.baseCurrency }),
+      };
+
+      case CONVERSION_RESULT:
+      return {
+        ...state,
+        baseCurrency: action.result.base,
+        conversions: {
+          ...state.conversions,
+          [action.result.base]: 
+          {
+            isFetching: false,
+            ...action.result,
+          },
+        },
+      };
+    case CONVERSION_ERROR:
+      return {
+        ...state,
+        error: action.error,
+      };
+
 
     default:
       return state;

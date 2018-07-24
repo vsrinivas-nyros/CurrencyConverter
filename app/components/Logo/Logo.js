@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { View, Text, Keyboard, Animated, Platform, StyleSheet } from 'react-native';
-
+import { connect } from 'react-redux';
 import styles from './styles';
 
 const ANIMATION_DURATION = 250;
@@ -94,4 +94,9 @@ class Logo extends Component {
   }
 }
 
-export default Logo;
+const mapStateToProps = state => ({
+  primaryColor: state.theme.primaryColor,
+});
+
+
+export default connect()(Logo);

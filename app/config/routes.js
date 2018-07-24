@@ -1,67 +1,77 @@
-import { StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Home from '../screens/Home';
+import CurrencyList from '../screens/CurrencyList';
 import Options from '../screens/Options';
 import Themes from '../screens/Themes';
-import CurrencyList from '../screens/CurrencyList';
-import EStyleSheet from 'react-native-extended-stylesheet';
 
-
-const styles = EStyleSheet.create({
-    $blue: '$primaryBlue',
-    $orange: '$primaryOrange',
-    $green: '$primaryGreen',
-    $purple: '$primaryPurple',
-    $red: '$primaryRed',
-    $yellow: '$primaryYellow',
-    $black: '$primaryBlack',
-    $violet: '$primaryViolet',
-  });
-
-export default StackNavigator({
-
-    Home:{
-        screen: Home,
-        navigationOptions:{
-            header: () => null,
-        },
+const HomeStack = StackNavigator(
+  {
+    Home: {
+      screen: Home,
+      navigationOptions: {
+        header: () => null,
+      },
     },
     Options: {
-        screen: Options,
-        navigationOptions: {
-          headerTitle: 'Options',
-          headerTintColor: 'white',
-          headerStyle: {
-            backgroundColor: '#4F6D7A'
-         }
+      screen: Options,
+    navigationOptions: ({ navigation }) => ({
+        headerTitle: navigation.state.params.title,
+        headerTintColor: '#FFFFFF',
+        headerStyle:{
+          backgroundColor : navigation.state.params.color,  
         },
-      },
-
-      Themes: {
-        screen: Themes,
-        navigationOptions: {
-            headerTitle: 'Themes',
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: '#4F6D7A'
-           }
-          },
-      },
-      
-    CurrencyList:{
-        screen:CurrencyList,
-        navigationOptions:({navigation}) => ({
-            headerTitle: navigation.state.params.title,
-            headerTintColor: 'white',
-            headerStyle: {
-              backgroundColor: '#4F6D7A'
-           }
-        })
+        headerTitleStyle: {
+        
+        }
+      }),
     },
+    Themes: {
+      screen: Themes,  
+    navigationOptions: ({ navigation }) => ({
+        headerTitle: navigation.state.params.title,
+        headerTintColor: '#FFFFFF',
+        headerStyle:{
+          backgroundColor : navigation.state.params.color,  
+        },
+        headerTitleStyle: {
+      
+        }
+      }),
+    },
+  },
+  {
+    headerMode: 'screen',
+  },
+);
 
-},
-{
-    mode: 'modal',
+const CurrencyListStack = StackNavigator({
+  CurrencyList: {
+    screen: CurrencyList,
 
+    navigationOptions: ({ navigation }) => ({
+      headerTitle: navigation.state.params.title,
+      headerTintColor: '#FFFFFF',
+      headerStyle:{
+        backgroundColor : navigation.state.params.color,  
+      },
+      headerTitleStyle: {
+     
+      }
+    }),
+  },
 });
 
+export default StackNavigator(
+  {
+    Home: {
+      screen: HomeStack,
+    },
+    CurrencyList: {
+      screen: CurrencyListStack,
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  },
+);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, StatusBar, Platform, Linking } from 'react-native';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Icon from 'react-native-ionicons';
 import { ListItem, Separator } from '../components/List';
 import { connectAlert } from '../components/Alert';
@@ -17,7 +18,7 @@ class Options extends Component {
   };
 
   handlePressTheme = () => {
-    this.props.navigation.navigate('Themes');
+    this.props.navigation.navigate('Themes', { title: 'Themes', type: 'themes', color: this.props.primaryColor });
   };
 
   handlePressSite = () => {
@@ -29,7 +30,7 @@ class Options extends Component {
   {
     return (
       <ScrollView>
-        <StatusBar translucent={false} barStyle="default" />
+        <StatusBar translucent={false} barStyle="default"/>
         <ListItem
           text="Themes"
           onPress={this.handlePressTheme}
@@ -51,4 +52,13 @@ class Options extends Component {
   }
 }
 
-export default connectAlert(Options);
+
+const mapStateToProps = (state) => {
+
+  return {
+    primaryColor: state.theme.primaryColor,
+  };
+
+};
+
+export default connect(mapStateToProps)(connectAlert(Options));

@@ -6,6 +6,8 @@ import { AlertProvider } from './components/Alert';
 import store from './config/store';
 import './reducers';
 
+
+
 EstyleSheet.build({
 
   $primaryBlue: '#4F6D7A',
@@ -24,6 +26,8 @@ EstyleSheet.build({
   $darkText:  '#343434',
 
 });
+
+
 
 export default () => <Provider store={store}> 
 <AlertProvider>
