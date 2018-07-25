@@ -11,6 +11,7 @@ const styles = EStyleSheet.create({
   $orange: '$primaryOrange',
   $green: '$primaryGreen',
   $purple: '$primaryPurple',
+  $black : '$primaryBlack',
 });
 
 class Themes extends Component 
@@ -62,6 +63,15 @@ class Themes extends Component
           selected
           checkmark={false}
           iconBackground={styles.$purple}
+        />
+
+         <Separator />
+        <ListItem
+          text="Black"
+          onPress={() => this.handleThemePress(styles.$black)}
+          selected
+          checkmark={false}
+          iconBackground={styles.$black}
         />
         <Separator />
       </ScrollView>

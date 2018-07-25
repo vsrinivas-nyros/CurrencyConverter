@@ -20,9 +20,6 @@ const HomeStack = StackNavigator(
         headerStyle:{
           backgroundColor : navigation.state.params.color,  
         },
-        headerTitleStyle: {
-        
-        }
       }),
     },
     Themes: {
@@ -33,9 +30,6 @@ const HomeStack = StackNavigator(
         headerStyle:{
           backgroundColor : navigation.state.params.color,  
         },
-        headerTitleStyle: {
-      
-        }
       }),
     },
   },
@@ -54,9 +48,6 @@ const CurrencyListStack = StackNavigator({
       headerStyle:{
         backgroundColor : navigation.state.params.color,  
       },
-      headerTitleStyle: {
-     
-      }
     }),
   },
 });

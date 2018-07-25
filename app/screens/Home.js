@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StatusBar, KeyboardAvoidingView } from 'react-native';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
@@ -16,7 +15,6 @@ class Home extends Component {
   state = {
     data: ''
  }
-
 
   handlePressBaseCurrency = () => 
   {
@@ -112,8 +110,6 @@ const mapStateToProps = (state) => {
   const { baseCurrency, quoteCurrency } = state.currencies;
   const conversionSelector = state.currencies.conversions[baseCurrency] || {};
   const rates = conversionSelector.rates || {};
-
-
   
   return {
     baseCurrency,

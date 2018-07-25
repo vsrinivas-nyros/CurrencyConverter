@@ -11,7 +11,6 @@ export const swapCurrency = () => ({
   type: SWAP_CURRENCY,
 });
 
-
 export const changeCurrencyAmount = amount => ({
   type: CHANGE_CURRENCY_AMOUNT,
   amount: parseFloat(amount),
@@ -31,3 +30,12 @@ export const getInitialConversion = () => ({
   type: GET_INITIAL_CONVERSION,
 });
 
+export const conversationResult = () => ({
+
+  type: CONVERSION_RESULT,
+});
+
+export const conversationError = () => ({
+
+  type:CONVERSION_ERROR,
+})

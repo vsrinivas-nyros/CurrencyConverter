@@ -6,9 +6,7 @@ import currencies from '../data/currencies';
 import { changeBaseCurrency, changeQuoteCurrency } from '../actions/currencies';
 import { connect } from 'react-redux';
 const TEMP_CURRENT_CURRENCY = 'INR';
-
 class CurrencyList extends Component {
-
 
 handlePress = (currency) => 
 {
@@ -26,23 +24,20 @@ this.props.navigation.goBack(null);
 };
 
 
-render() {
+render()
+ {
+    let comparisionCurrency = this.props.baseCurrency;    
+    if(this.props.navigation.state.params.type === 'quote') 
+    {      comparisionCurrency = this.props.quoteCurrency;    }
+
 return (
 <View style={{ flex: 1 }}>
 <StatusBar translucent={false} barStyle="default" />
 <FlatList
 data={currencies}
-renderItem={({ item }) => (
-<ListItem
-text={item}
-selected={item === TEMP_CURRENT_CURRENCY}
-onPress= {()=> {this.handlePress(item)}}
-iconBackground={this.props.primaryColor}
-/>
-)}
+renderItem={({ item }) => (<ListItem  text={item}  selected={item === comparisionCurrency} onPress= {()=> {this.handlePress(item)}} iconBackground={this.props.primaryColor} />)}
 keyExtractor={item => item}
-ItemSeparatorComponent={Separator}
-/>
+ItemSeparatorComponent={Separator} />
 </View>
 );
 }
@@ -50,9 +45,10 @@ ItemSeparatorComponent={Separator}
 
 const mapStateToProps = state => ({
 
-    basCurrency: state.currencies.baseCurrency,
-    quoteCurrency: state.currencies.quoeCurrency,
+    baseCurrency: state.currencies.baseCurrency,
+    quoteCurrency: state.currencies.quoteCurrency,
     primaryColor: state.theme.primaryColor,
+
 });
 
 export default connect(mapStateToProps)(CurrencyList);
