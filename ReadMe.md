@@ -24,8 +24,9 @@ A quick android currency converter that uses exchange rates from http://fixer.io
 9. Enable Live Reloade and Hot Reloading for instant debugging. 
 
 
-### Direcorty Structure
+### Project Structure
 
+```
 CurrencyConverter
 	|
 	|---android
@@ -88,6 +89,7 @@ CurrencyConverter
 	|----index.js
 	|----package.json
 	|----package-lock.json
+```
 
 
 
