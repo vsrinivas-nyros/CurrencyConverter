@@ -54,14 +54,51 @@ CurrencyConverter
 	|	|
 	|	|---components (component contains UI desing and styles)
 	|	|	|---alert
+	|	|	|	|---AlerProvider.js
+	|	|	|	|---connectAlert.js
+	|	|	|	|---index.js
+	|	|	|	
 	|	|	|---buttons
+	|	|	|	|---Images(folder)
+	|	|	|	|---ClearButton.js
+	|	|	|	|---styles.js
+	|	|	|	|---index.js
+	|	|	|
 	|	|	|---Container
+	|	|	|	|---Container.js
+	|	|	|	|---styles.js
+	|	|	|	|---index.js
+	|	|	|
 	|	|	|---Header
+	|	|	|	|---Images(folder)
+	|	|	|	|---Header.js
+	|	|	|	|---styles.js
+	|	|	|	|---index.js
+	|	|	|
 	|	|	|---List
+	|	|	|	|---Images(folder)
+	|	|	|	|---icon.js
+	|	|	|	|---ListItem.js
+	|	|	|	|---Separator.js
+	|	|	|	|---styles.js
+	|	|	|	|---index.js
+	|	|	|
 	|	|	|---Logo
+	|	|	|	|---Images(folder)
+	|	|	|	|---Logo.js
+	|	|	|	|---styles.js
+	|	|	|	|---index.js
+	|	|	|
 	|	|	|---Text
+	|	|	|	|---Converet.js
+	|	|	|	|---styles.js
+	|	|	|	|---index.js
+	|	|	|
 	|	|	|---TextInput
-	|	|
+	|	|	|	|---InputWithButton.js
+	|	|	|	|---styles.js
+	|	|	|	|---index.js
+	|	|	|
 	|	|---config
 	|	|	|---routes.js
 	|	|	|---sagas.js
@@ -82,7 +119,7 @@ CurrencyConverter
 	|	|	|---Themes.js
 	|	|---index.js
 	|
-	|----Nodemodules
+	|---Nodemodules
 	|----app.json
 	|----App.js
 	|----currency-converter.keystore
