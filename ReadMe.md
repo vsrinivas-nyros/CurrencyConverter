@@ -1,25 +1,30 @@
-					
-					Currency Converter
 
-Description:
-	Currency Converter is a mobile native application using by React Native.
-This application focuses on to display currency values of two two different countries.
-Ex: 1 USD = 68.56 INR.
+# Currency Converter
 
-Prerequisite:
-1. Platform 	: React Native.
-2. Tools	: React Native Cli (command line interface) ,
-		  Android SDK, 
-		  Platform Tools is must be grater than or equal to 23.0.0,
-		  Android Mobile version 6.0.
-3. Editors	: Visual Studio Code editor or any Text Editor like Sublime.
+A quick android currency converter that uses exchange rates from http://fixer.io/			
+
+### How To Install
+
+1. Go to your android device's settings
+2. Navigate to security settings
+3. Ensure "Unknown sources" is enabled
+4. Visit https://github.com/vsrinivas-nyros/CurrencyConverter/tree/master/android/app/apk/app-debug.apk in your android device's browser
+5. Install
+
+### How To Build
+
+1. Install git
+2. Clone the project (`git clone git@github.com:vsrinivas-nyros/CurrencyConverter.git`)
+3. Run ”'npm install -g react-native-cli'' to install react native cli.
+4. Install node modules by 'npm install' command from the cloned project root directory.
+5. Run “sudo react-native start --port= 1234” to start application
+6. Connect your mobile device and run 'adb devices' to check device connectivity for USB debugging.
+7. Then Run “react-native run-android” to debug app in android mobile or react-native run-ios for IOS mobiles.
+8. Run “react-native log-android” to view logs.
+9. Enable Live Reloade and Hot Reloading for instant debugging. 
 
 
-Environmental setup and usage:
-1. Run ”'npm install -g react-native-cli'' to install react native cli.
-2. UnZip downloaded zip file and install node modules by 'npm install' command from the root directory.
-3. Run “sudo react-native start --port= 1234” to start application
-4. Connect your mobile device and check 'adb devices' whether it is connected or not.
-5. Then Run “react-native run-android” to debug app in android mobile or react-native run-ios for IOS mobiles.
-6. Run “react-native log-android” to view logs.
+
+
+
 
