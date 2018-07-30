@@ -7,10 +7,12 @@ This application focuses on to display currency values of two two different coun
 Ex: 1 USD = 68.56 INR.
 
 Prerequisite:
-Platform 	: React Native.
-Tools		: React Native Cli (command line interface) ,Android SDK, 
-		  Platform Tools is must be grater than or equal to 23.0.0,Android Mobile version 6.0.
-Editor		: Visual Studio Code editor or any Text Editor like Sublime.
+1. Platform 	: React Native.
+2. Tools	: React Native Cli (command line interface) ,
+		  Android SDK, 
+		  Platform Tools is must be grater than or equal to 23.0.0,
+		  Android Mobile version 6.0.
+3. Editors	: Visual Studio Code editor or any Text Editor like Sublime.
 
 
 Environmental setup and usage:
