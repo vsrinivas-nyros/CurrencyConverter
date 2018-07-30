@@ -24,6 +24,70 @@ A quick android currency converter that uses exchange rates from http://fixer.io
 9. Enable Live Reloade and Hot Reloading for instant debugging. 
 
 
+### Direcorty Structure
+
+CurrencyConverter
+	|
+	|---android
+	|	|---app(folder)
+	|	|---build(folder)
+	|	|---gradle(folder)
+	|	|---keystores(folder)
+	|	|---build.gradle
+	|	|---gradle.properties
+	|	|---gradlew
+	|	|---local.properties
+	|	|---settings.gradle
+	|
+	|-----Ios
+	|	|---SampleApp
+	|	|---SampleApp.xcodeproj
+	|	|---SampleAppTests
+	|	|---SampleApp-tvOS
+	|	|---SampleApp-tvOSTests
+	|
+	|-----app(React Native root directory)
+	|	|---actions
+	|	|	|---currencies.js
+	|	|	|---theme.js
+	|	|
+	|	|---components (component contains UI desing and styles)
+	|	|	|---alert
+	|	|	|---buttons
+	|	|	|---Container
+	|	|	|---Header
+	|	|	|---List
+	|	|	|---Logo
+	|	|	|---Text
+	|	|	|---TextInput
+	|	|
+	|	|---config
+	|	|	|---routes.js
+	|	|	|---sagas.js
+	|	|	|---store.js
+	|	|
+	|	|-----data
+	|	|	|---currencies.js
+	|	|
+	|	|---reducers
+	|	|	|---currencies.js
+	|	|	|---theme.js
+	|	|	|---index.js
+	|	|
+	|	|---screens
+	|	|	|---CurrencyList.js
+	|	|	|---Home.js
+	|	|	|---Options.js
+	|	|	|---Themes.js
+	|	|---index.js
+	|
+	|----Nodemodules
+	|----app.json
+	|----App.js
+	|----currency-converter.keystore
+	|----index.js
+	|----package.json
+	|----package-lock.json
 
 
 
